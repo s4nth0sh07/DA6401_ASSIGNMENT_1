@@ -14,7 +14,7 @@ def sigmoid_grad(z):
     return sigmoid(z) * (1 - sigmoid(z))
 
 def relu_grad(x):
-    return (x > 0).astype(float)
+    return np.where(x > 0, 1.0, 0.0)
 
 def tanh(x):
     return np.tanh(x)
@@ -39,5 +39,23 @@ def softmax(x):
 
     return temp / summer
 
-def activate(activation):
-    return ''
+def forward_activate(activation):
+    match activation.lower():
+        case 'relu':
+            return relu
+        case 'sigmoid':
+            return sigmoid
+        case 'tanh':
+            return tanh
+        case 'softmax':
+            return softmax
+
+def backward_activate(activation):
+    match activation.lower():
+        case 'relu':
+            return relu_grad
+        case 'sigmoid':
+            return sigmoid_grad
+        case 'tanh':
+            return tanh_grad
+        
