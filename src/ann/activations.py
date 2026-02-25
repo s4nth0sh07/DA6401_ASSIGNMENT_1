@@ -35,8 +35,9 @@ def softmax(x):
     # return res
     maxi = np.max(x, axis = 1, keepdims = True)
     temp = np.exp(x - maxi)
-    sum = np.sum(temp, axis = 1, keepdims = True)
-    
-    return temp / sum
+    summer = np.sum(temp, axis = 1, keepdims = True)
 
+    return temp / summer
 
+def activate(activation):
+    return ''
