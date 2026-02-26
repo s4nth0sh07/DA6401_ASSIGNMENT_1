@@ -4,6 +4,7 @@ Handles forward and backward propagation loops
 """
 import numpy as np
 from .neural_layer import layer 
+from .objective_functions import cross_entropy_loss, cross_entropy_grad, mean_squared_grad, mean_squared_loss
 
 class NeuralNetwork:
     """
@@ -20,6 +21,7 @@ class NeuralNetwork:
         self.layers = {}
         hidden_layer_size = cli_args.hidden_size
         self.learning_rate = cli_args.learning_rate
+        self.loss = cli_args.loss
 
         self.layers['hidden1'] = layer(
             no_of_neurons = hidden_layer_size[0],
@@ -73,7 +75,11 @@ class NeuralNetwork:
         Returns:
             return grad_w, grad_b
         """
-        error = y_pred - y_true
+        if self.loss == 'mean_squared_error':
+            error = mean_squared_grad(y_true, y_pred)
+        elif self.loss == 'cross_entropy':
+            error = cross_entropy_grad(y_true, y_pred)
+        
         curr = {key : self.layers[key] for key in reversed(self.layers)}
         for layer_name, l in curr.items():
             error = l.backward_pass(error)
