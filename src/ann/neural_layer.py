@@ -3,7 +3,7 @@ Neural Layer Implementation
 Handles weight initialization, forward pass, and gradient computation
 """
 import numpy as np
-from activations import forward_activate, backward_activate
+from .activations import forward_activate, backward_activate
 
 class layer:
     def __init__(self, no_of_neurons, no_of_inputs, weight_init = 'random', activation = 'relu'):
@@ -37,10 +37,10 @@ class layer:
     def backward_pass(self, loss_grad):
         grad_z = self.backward_activation(self.z)
         delta = loss_grad * grad_z
-        m = self.x.shape[0]
+        no_of_images = self.x.shape[0]
         self.grad_W = (np.transpose(self.x) @ delta)
-        self.grad_W /= m
+        self.grad_W /= no_of_images
         self.grad_b = np.sum(delta, axis = 0, keepdims = True)
-        self.grad_b /= m
+        self.grad_b /= no_of_images
         res = delta @ np.transpose(self.weights)
         return res
