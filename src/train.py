@@ -4,6 +4,8 @@ Entry point for training neural networks with command-line arguments
 """
 
 import argparse
+from utils.data_loader import load_data, process_data
+from ann.neural_network import NeuralNetwork
 
 def parse_arguments():
     """
@@ -45,7 +47,16 @@ def main():
     Main training function.
     """
     args = parse_arguments()
-    
+    (X_train, y_train), (X_test, y_test) = load_data(args.dataset)
+    X_train, X_test, y_train, y_test, X_val, y_val = process_data(X_train, X_test, y_train, y_test)
+
+    model = NeuralNetwork(cli_args = args)
+    model.train(X_train = X_train, y_train = y_train, epochs = args.epochs, batch_size = args.batch_size)
+
+    validaton_accuracy = model.evaluate(X_val, y_val)
+    testing_accuracy = model.evaluate(X_test, y_test)
+    print(validaton_accuracy * 100, testing_accuracy * 100)
+
     print("Training complete!")
 
 

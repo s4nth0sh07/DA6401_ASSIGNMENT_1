@@ -19,6 +19,7 @@ class layer:
         
         self.biases = np.zeros((1, no_of_neurons))
         self.weight_init = weight_init
+        self.activation = activation
         self.forward_activation = forward_activate(activation)
         self.backward_activation = backward_activate(activation)
 
@@ -35,8 +36,11 @@ class layer:
         return res
     
     def backward_pass(self, loss_grad):
-        grad_z = self.backward_activation(self.z)
-        delta = loss_grad * grad_z
+        if self.activation == 'softmax':
+            delta = loss_grad
+        else:
+            grad_z = self.backward_activation(self.z)
+            delta = loss_grad * grad_z
         no_of_images = self.x.shape[0]
         self.grad_W = (np.transpose(self.x) @ delta)
         self.grad_W /= no_of_images
