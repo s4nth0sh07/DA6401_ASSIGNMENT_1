@@ -31,8 +31,16 @@ class layer:
         self.x = x
         z = x @ self.weights + self.biases
         self.z = z
+        res = self.forward_activation(z)
+        return res
     
-        return self.forward_activation(z)
-    
-    def backward_pass():
-        pass
+    def backward_pass(self, loss_grad):
+        grad_z = self.backward_activation(self.z)
+        delta = loss_grad * grad_z
+        m = self.x.shape[0]
+        self.grad_W = (np.transpose(self.x) @ delta)
+        self.grad_W /= m
+        self.grad_b = np.sum(delta, axis = 0, keepdims = True)
+        self.grad_b /= m
+        res = delta @ np.transpose(self.weights)
+        return res
