@@ -5,6 +5,7 @@ Handles forward and backward propagation loops
 import numpy as np
 from .neural_layer import layer 
 from .objective_functions import cross_entropy_loss, cross_entropy_grad, mean_squared_grad, mean_squared_loss
+from .optimizers import SGD, Momentum, NAG, RMSprop, Adam, Nadam
 
 class NeuralNetwork:
     """
@@ -48,6 +49,23 @@ class NeuralNetwork:
                 weight_init = cli_args.weight_init,
                 activation = activation
             )
+        
+        optimization_func = cli_args.optimizer.lower()
+        self.optimizer = None
+        match optimization_func:
+            case 'sgd':
+                self.optimizer = SGD(self.layers, self.learning_rate)
+            case 'momentum':
+                self.optimizer = Momentum(self.layers, self.learning_rate, b = 0.9)
+            case 'nag':
+                self.optimizer = NAG(self.layers, learning_rate = self.learning_rate, b = 0.9)
+            case 'rmsprop':
+                self.optimizer = RMSprop(self.layers, learning_rate = self.learning_rate, b = 0.999, e = 1e-8)
+            case 'adam':
+                self.optimizer = Adam(self.layers, learning_rate = self.learning_rate, b1 = 0.9, b2 = 0.999, e = 1e-8)
+            case 'nadam':
+                self.optimizer = Nadam(self.layers, learning_rate = self.learning_rate, b1 = 0.9, b2 = 0.999, e = 1e-8)
+
     
     def forward(self, X):
         """
@@ -93,9 +111,7 @@ class NeuralNetwork:
         """
         Update weights using the optimizer.
         """
-        for l in self.layers.values():
-            l.weights = l.weights - self.learning_rate * l.grad_W
-            l.biases = l.biases - self.learning_rate * l.grad_b
+        self.optimizer.update()
     
     def train(self, X_train, y_train, epochs, batch_size):
         """
