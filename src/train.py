@@ -3,7 +3,7 @@ Main Training Script
 Entry point for training neural networks with command-line arguments
 """
 
-import argparse
+import argparse, wandb
 from utils.data_loader import load_data, process_data
 from ann.neural_network import NeuralNetwork
 
@@ -38,7 +38,7 @@ def parse_arguments():
     parser.add_argument('-a', '--activation', type = str, default='sigmoid', choices=['sigmoid', 'tanh', 'relu'], help = 'Choice of sigmoid, tanh, relu for every hidden layer.')
     parser.add_argument('-w_i', '--weight_init', type = str, default = 'random', choices = ['random', 'xavier'], help = 'Choice of random or xavier')
     parser.add_argument('--wandb_project', type = str, default = 'ASSIGNMENT-1', help = 'W&B project name')
-    parser.add_argument('--model_save_path', type = str, default='models/final_model.npy', help = 'Path to save trained model')
+    parser.add_argument('--model_save_path', type = str, default='models/best_model.npy', help = 'Path to save trained model')
     return parser.parse_args()
 
 
@@ -47,16 +47,22 @@ def main():
     Main training function.
     """
     args = parse_arguments()
+    wandb.init(
+        project=args.wandb_project,
+        config=vars(args)
+    )
+
     (X_train, y_train), (X_test, y_test) = load_data(args.dataset)
     X_train, X_test, y_train, y_test, X_val, y_val = process_data(X_train, X_test, y_train, y_test)
 
     model = NeuralNetwork(cli_args = args)
-    model.train(X_train = X_train, y_train = y_train, epochs = args.epochs, batch_size = args.batch_size)
+    model.train(X_train = X_train, y_train = y_train, epochs = args.epochs, batch_size = args.batch_size, X_val = X_val, y_val = y_val)
 
     validaton_accuracy = model.evaluate(X_val, y_val)
     testing_accuracy = model.evaluate(X_test, y_test)
     print(validaton_accuracy * 100, testing_accuracy * 100)
 
+    wandb.finish()
     print("Training complete!")
 
 

@@ -3,6 +3,7 @@ Main Neural Network Model class
 Handles forward and backward propagation loops
 """
 import numpy as np
+import wandb
 from .neural_layer import layer 
 from .objective_functions import cross_entropy_loss, cross_entropy_grad, mean_squared_grad, mean_squared_loss
 from .optimizers import SGD, Momentum, NAG, RMSprop, Adam, Nadam
@@ -23,6 +24,7 @@ class NeuralNetwork:
         hidden_layer_size = cli_args.hidden_size
         self.learning_rate = cli_args.learning_rate
         self.loss = cli_args.loss
+        self.model_save_path = cli_args.model_save_path
 
         self.layers['hidden1'] = layer(
             no_of_neurons = hidden_layer_size[0],
@@ -113,13 +115,14 @@ class NeuralNetwork:
         """
         self.optimizer.update()
     
-    def train(self, X_train, y_train, epochs, batch_size):
+    def train(self, X_train, y_train, epochs, batch_size, X_val = None, y_val = None):
         """
         Train the network for specified epochs.
         """
         no_of_images = X_train.shape[0]
         no_of_batches =int(np.ceil(no_of_images / batch_size))
         rem = no_of_images % batch_size
+        curr_epoch = 1
         while epochs != 0:
             index = np.random.permutation(no_of_images)
             X_train_new, y_train_new = X_train[index], y_train[index]
@@ -134,8 +137,44 @@ class NeuralNetwork:
                 self.backward(y_curr, y_pred)
                 self.update_weights()
                 b += batch_size
+            
+            curr_train_pred = self.forward(X_train)
+            curr_train_loss = None
+            curr_val_pred = self.forward(X_val)
+            curr_val_loss = None
+            if self.loss == 'mean_squared_error':
+                curr_train_loss = mean_squared_loss(y_train, curr_train_pred)
+                curr_val_loss = mean_squared_loss(y_val, curr_val_pred)
+            elif self.loss == 'cross_entropy':
+                curr_train_loss = cross_entropy_loss(y_train, curr_train_pred)
+                curr_val_loss = cross_entropy_loss(y_val, curr_val_pred)
 
+            accuracy = ((self.evaluate(X_val, y_val), self.evaluate(X_train, y_train)))
+
+            log_dict = {
+                "epoch": curr_epoch,
+                "train_loss": curr_train_loss,
+                "train_accuracy": accuracy[1],
+                "val_loss": curr_val_loss,
+                "val_accuracy": accuracy[0]
+            }
+            print_str = f"Epoch {curr_epoch} | Train Loss: {curr_train_loss:.4f} | Train Acc: {accuracy[1]*100:.2f}%"
+            print(print_str)
+            print_str = f"Epoch {curr_epoch} | Validation Loss: {curr_val_loss:.4f} | Validation Acc: {accuracy[0]*100:.2f}%"
+            print(print_str)
+
+            if wandb.run is not None:
+                wandb.log(log_dict)
+
+            curr_epoch += 1
             epochs -= 1
+        
+        model = {}
+        for name, layer in self.layers.items():
+            model[f"{name}_W"] = layer.weights
+            model[f"{name}_b"] = layer.biases
+
+        np.save(self.model_save_path, model)
 
 
     
