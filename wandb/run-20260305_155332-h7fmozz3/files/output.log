@@ -1,6 +1,0 @@
-Epoch 1 | Train Loss: 0.2587 | Train Acc: 93.01% | Val Loss: 0.2579 | Val Acc: 93.08%
-Epoch 2 | Train Loss: 0.2061 | Train Acc: 94.33% | Val Loss: 0.2087 | Val Acc: 94.17%
-Epoch 3 | Train Loss: 0.1768 | Train Acc: 95.10% | Val Loss: 0.1867 | Val Acc: 94.87%
-Epoch 4 | Train Loss: 0.1496 | Train Acc: 95.92% | Val Loss: 0.1593 | Val Acc: 95.28%
-Epoch 5 | Train Loss: 0.1309 | Train Acc: 96.40% | Val Loss: 0.1436 | Val Acc: 95.72%
-95.71666666666667 95.66

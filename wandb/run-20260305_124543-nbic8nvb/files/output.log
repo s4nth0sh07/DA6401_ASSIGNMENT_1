@@ -1,2 +1,0 @@
-Shape of grad_Ws: (2,) (784, 128)
-Shape of grad_bs: (2,) (1, 128)
