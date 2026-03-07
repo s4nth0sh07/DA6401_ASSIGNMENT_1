@@ -1,0 +1,13 @@
+/Users/santhoshreddy/Documents/Semester2/DA6401/Assignment-1/src/ann/activations.py:8: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-1 * z))
+Epoch 1 | Train Loss: 0.9496 | Train Acc: 9.96% | Val Loss: 0.9483 | Val Acc: 10.35%
+Epoch 2 | Train Loss: 0.9127 | Train Acc: 10.02% | Val Loss: 0.9124 | Val Acc: 9.83%
+Epoch 3 | Train Loss: 0.9345 | Train Acc: 9.98% | Val Loss: 0.9324 | Val Acc: 10.18%
+Epoch 4 | Train Loss: 0.9328 | Train Acc: 10.02% | Val Loss: 0.9341 | Val Acc: 9.83%
+Epoch 5 | Train Loss: 0.9286 | Train Acc: 10.02% | Val Loss: 0.9275 | Val Acc: 9.83%
+Epoch 6 | Train Loss: 0.9113 | Train Acc: 9.96% | Val Loss: 0.9116 | Val Acc: 10.35%
+Epoch 7 | Train Loss: 0.9078 | Train Acc: 10.02% | Val Loss: 0.9086 | Val Acc: 9.83%
+Epoch 8 | Train Loss: 0.9176 | Train Acc: 9.95% | Val Loss: 0.9178 | Val Acc: 10.45%
+Epoch 9 | Train Loss: 0.9108 | Train Acc: 10.01% | Val Loss: 0.9121 | Val Acc: 9.95%
+Epoch 10 | Train Loss: 0.9148 | Train Acc: 10.02% | Val Loss: 0.9140 | Val Acc: 9.83%
+9.833333333333332 10.0

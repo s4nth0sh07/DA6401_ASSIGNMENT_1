@@ -1,0 +1,12 @@
+{"time":"2026-03-05T14:57:44.573495+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T14:57:44.977393+05:30","level":"INFO","msg":"stream: created new stream","id":"ng6tccld"}
+{"time":"2026-03-05T14:57:44.977437+05:30","level":"INFO","msg":"handler: started","stream_id":"ng6tccld"}
+{"time":"2026-03-05T14:57:44.977542+05:30","level":"INFO","msg":"stream: started","id":"ng6tccld"}
+{"time":"2026-03-05T14:57:44.977548+05:30","level":"INFO","msg":"writer: started","stream_id":"ng6tccld"}
+{"time":"2026-03-05T14:57:44.977582+05:30","level":"INFO","msg":"sender: started","stream_id":"ng6tccld"}
+{"time":"2026-03-05T14:57:51.898835+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T14:57:52.395475+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T14:57:52.39892+05:30","level":"INFO","msg":"stream: closing","id":"ng6tccld"}
+{"time":"2026-03-05T14:57:52.398932+05:30","level":"INFO","msg":"handler: closed","stream_id":"ng6tccld"}
+{"time":"2026-03-05T14:57:52.399103+05:30","level":"INFO","msg":"sender: closed","stream_id":"ng6tccld"}
+{"time":"2026-03-05T14:57:52.39911+05:30","level":"INFO","msg":"stream: closed","id":"ng6tccld"}

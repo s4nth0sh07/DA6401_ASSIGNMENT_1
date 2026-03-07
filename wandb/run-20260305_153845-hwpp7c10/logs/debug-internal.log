@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:38:46.186025+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:38:46.571823+05:30","level":"INFO","msg":"stream: created new stream","id":"hwpp7c10"}
+{"time":"2026-03-05T15:38:46.571953+05:30","level":"INFO","msg":"handler: started","stream_id":"hwpp7c10"}
+{"time":"2026-03-05T15:38:46.572099+05:30","level":"INFO","msg":"stream: started","id":"hwpp7c10"}
+{"time":"2026-03-05T15:38:46.572113+05:30","level":"INFO","msg":"writer: started","stream_id":"hwpp7c10"}
+{"time":"2026-03-05T15:38:46.572137+05:30","level":"INFO","msg":"sender: started","stream_id":"hwpp7c10"}
+{"time":"2026-03-05T15:39:04.459531+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:39:05.119378+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:39:05.121315+05:30","level":"INFO","msg":"stream: closing","id":"hwpp7c10"}
+{"time":"2026-03-05T15:39:05.121325+05:30","level":"INFO","msg":"handler: closed","stream_id":"hwpp7c10"}
+{"time":"2026-03-05T15:39:05.12184+05:30","level":"INFO","msg":"sender: closed","stream_id":"hwpp7c10"}
+{"time":"2026-03-05T15:39:05.121846+05:30","level":"INFO","msg":"stream: closed","id":"hwpp7c10"}

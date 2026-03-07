@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:46:30.0776+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:46:30.478752+05:30","level":"INFO","msg":"stream: created new stream","id":"vylgis4i"}
+{"time":"2026-03-05T15:46:30.4788+05:30","level":"INFO","msg":"handler: started","stream_id":"vylgis4i"}
+{"time":"2026-03-05T15:46:30.478955+05:30","level":"INFO","msg":"stream: started","id":"vylgis4i"}
+{"time":"2026-03-05T15:46:30.478964+05:30","level":"INFO","msg":"writer: started","stream_id":"vylgis4i"}
+{"time":"2026-03-05T15:46:30.478967+05:30","level":"INFO","msg":"sender: started","stream_id":"vylgis4i"}
+{"time":"2026-03-05T15:46:39.268661+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:46:39.765834+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:46:39.768752+05:30","level":"INFO","msg":"stream: closing","id":"vylgis4i"}
+{"time":"2026-03-05T15:46:39.768765+05:30","level":"INFO","msg":"handler: closed","stream_id":"vylgis4i"}
+{"time":"2026-03-05T15:46:39.768977+05:30","level":"INFO","msg":"sender: closed","stream_id":"vylgis4i"}
+{"time":"2026-03-05T15:46:39.768988+05:30","level":"INFO","msg":"stream: closed","id":"vylgis4i"}

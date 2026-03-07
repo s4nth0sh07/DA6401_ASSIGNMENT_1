@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:30:43.047663+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:30:43.461202+05:30","level":"INFO","msg":"stream: created new stream","id":"etofgfg5"}
+{"time":"2026-03-05T15:30:43.461244+05:30","level":"INFO","msg":"handler: started","stream_id":"etofgfg5"}
+{"time":"2026-03-05T15:30:43.461387+05:30","level":"INFO","msg":"stream: started","id":"etofgfg5"}
+{"time":"2026-03-05T15:30:43.461394+05:30","level":"INFO","msg":"writer: started","stream_id":"etofgfg5"}
+{"time":"2026-03-05T15:30:43.461396+05:30","level":"INFO","msg":"sender: started","stream_id":"etofgfg5"}
+{"time":"2026-03-05T15:30:50.178228+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:30:50.684953+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:30:50.688258+05:30","level":"INFO","msg":"stream: closing","id":"etofgfg5"}
+{"time":"2026-03-05T15:30:50.688269+05:30","level":"INFO","msg":"handler: closed","stream_id":"etofgfg5"}
+{"time":"2026-03-05T15:30:50.688469+05:30","level":"INFO","msg":"sender: closed","stream_id":"etofgfg5"}
+{"time":"2026-03-05T15:30:50.688475+05:30","level":"INFO","msg":"stream: closed","id":"etofgfg5"}

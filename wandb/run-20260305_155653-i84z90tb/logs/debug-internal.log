@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:56:53.708859+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:56:54.107337+05:30","level":"INFO","msg":"stream: created new stream","id":"i84z90tb"}
+{"time":"2026-03-05T15:56:54.107377+05:30","level":"INFO","msg":"handler: started","stream_id":"i84z90tb"}
+{"time":"2026-03-05T15:56:54.107523+05:30","level":"INFO","msg":"stream: started","id":"i84z90tb"}
+{"time":"2026-03-05T15:56:54.107527+05:30","level":"INFO","msg":"writer: started","stream_id":"i84z90tb"}
+{"time":"2026-03-05T15:56:54.107552+05:30","level":"INFO","msg":"sender: started","stream_id":"i84z90tb"}
+{"time":"2026-03-05T15:57:12.343869+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:57:13.002266+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:57:13.009539+05:30","level":"INFO","msg":"stream: closing","id":"i84z90tb"}
+{"time":"2026-03-05T15:57:13.009615+05:30","level":"INFO","msg":"handler: closed","stream_id":"i84z90tb"}
+{"time":"2026-03-05T15:57:13.010755+05:30","level":"INFO","msg":"sender: closed","stream_id":"i84z90tb"}
+{"time":"2026-03-05T15:57:13.010828+05:30","level":"INFO","msg":"stream: closed","id":"i84z90tb"}

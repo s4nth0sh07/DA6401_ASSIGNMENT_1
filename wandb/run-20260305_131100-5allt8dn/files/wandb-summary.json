@@ -1,0 +1,1 @@
+{"train_accuracy":0.9629074074074074,"val_loss":0.12286027834338957,"epoch":10,"_runtime":6,"train_loss":0.11072113831396076,"_wandb":{"runtime":6},"val_accuracy":0.9565,"_timestamp":1.7726964683566442e+09,"_step":10,"test_f1":0.9547775954523232,"test_accuracy":0.9552}

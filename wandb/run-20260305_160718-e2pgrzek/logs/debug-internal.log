@@ -1,0 +1,12 @@
+{"time":"2026-03-05T16:07:19.22453+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T16:07:19.617563+05:30","level":"INFO","msg":"stream: created new stream","id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:19.61763+05:30","level":"INFO","msg":"handler: started","stream_id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:19.617861+05:30","level":"INFO","msg":"stream: started","id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:19.617872+05:30","level":"INFO","msg":"writer: started","stream_id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:19.617887+05:30","level":"INFO","msg":"sender: started","stream_id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:26.02151+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T16:07:26.548758+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T16:07:26.551116+05:30","level":"INFO","msg":"stream: closing","id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:26.551128+05:30","level":"INFO","msg":"handler: closed","stream_id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:26.551407+05:30","level":"INFO","msg":"sender: closed","stream_id":"e2pgrzek"}
+{"time":"2026-03-05T16:07:26.551415+05:30","level":"INFO","msg":"stream: closed","id":"e2pgrzek"}
