@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:08:38.288827+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:08:38.760396+05:30","level":"INFO","msg":"stream: created new stream","id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:38.760444+05:30","level":"INFO","msg":"handler: started","stream_id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:38.760586+05:30","level":"INFO","msg":"stream: started","id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:38.760596+05:30","level":"INFO","msg":"writer: started","stream_id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:38.760605+05:30","level":"INFO","msg":"sender: started","stream_id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:50.284425+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:08:50.873942+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:08:50.878523+05:30","level":"INFO","msg":"stream: closing","id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:50.878553+05:30","level":"INFO","msg":"handler: closed","stream_id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:50.878939+05:30","level":"INFO","msg":"sender: closed","stream_id":"tewtbi2k"}
+{"time":"2026-03-05T15:08:50.878969+05:30","level":"INFO","msg":"stream: closed","id":"tewtbi2k"}

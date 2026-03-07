@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:16:20.690305+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:16:21.093012+05:30","level":"INFO","msg":"stream: created new stream","id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:21.093054+05:30","level":"INFO","msg":"handler: started","stream_id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:21.093199+05:30","level":"INFO","msg":"stream: started","id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:21.09321+05:30","level":"INFO","msg":"sender: started","stream_id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:21.093209+05:30","level":"INFO","msg":"writer: started","stream_id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:29.980632+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:16:30.669918+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:16:30.672255+05:30","level":"INFO","msg":"stream: closing","id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:30.672268+05:30","level":"INFO","msg":"handler: closed","stream_id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:30.672432+05:30","level":"INFO","msg":"sender: closed","stream_id":"aqmnuni6"}
+{"time":"2026-03-05T15:16:30.672442+05:30","level":"INFO","msg":"stream: closed","id":"aqmnuni6"}

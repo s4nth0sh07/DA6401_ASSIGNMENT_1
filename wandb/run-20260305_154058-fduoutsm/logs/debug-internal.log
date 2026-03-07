@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:40:58.712538+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:40:59.107717+05:30","level":"INFO","msg":"stream: created new stream","id":"fduoutsm"}
+{"time":"2026-03-05T15:40:59.107759+05:30","level":"INFO","msg":"handler: started","stream_id":"fduoutsm"}
+{"time":"2026-03-05T15:40:59.107917+05:30","level":"INFO","msg":"stream: started","id":"fduoutsm"}
+{"time":"2026-03-05T15:40:59.107926+05:30","level":"INFO","msg":"writer: started","stream_id":"fduoutsm"}
+{"time":"2026-03-05T15:40:59.107929+05:30","level":"INFO","msg":"sender: started","stream_id":"fduoutsm"}
+{"time":"2026-03-05T15:41:09.613918+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:41:10.356484+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:41:10.358298+05:30","level":"INFO","msg":"stream: closing","id":"fduoutsm"}
+{"time":"2026-03-05T15:41:10.358307+05:30","level":"INFO","msg":"handler: closed","stream_id":"fduoutsm"}
+{"time":"2026-03-05T15:41:10.358562+05:30","level":"INFO","msg":"sender: closed","stream_id":"fduoutsm"}
+{"time":"2026-03-05T15:41:10.358573+05:30","level":"INFO","msg":"stream: closed","id":"fduoutsm"}

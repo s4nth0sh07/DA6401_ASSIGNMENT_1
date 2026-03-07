@@ -1,0 +1,12 @@
+{"time":"2026-03-05T13:04:55.241313+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T13:04:55.650482+05:30","level":"INFO","msg":"stream: created new stream","id":"geex8f8q"}
+{"time":"2026-03-05T13:04:55.650577+05:30","level":"INFO","msg":"handler: started","stream_id":"geex8f8q"}
+{"time":"2026-03-05T13:04:55.650734+05:30","level":"INFO","msg":"stream: started","id":"geex8f8q"}
+{"time":"2026-03-05T13:04:55.650752+05:30","level":"INFO","msg":"sender: started","stream_id":"geex8f8q"}
+{"time":"2026-03-05T13:04:55.650748+05:30","level":"INFO","msg":"writer: started","stream_id":"geex8f8q"}
+{"time":"2026-03-05T13:05:07.046697+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T13:05:07.84462+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T13:05:07.852556+05:30","level":"INFO","msg":"stream: closing","id":"geex8f8q"}
+{"time":"2026-03-05T13:05:07.853052+05:30","level":"INFO","msg":"handler: closed","stream_id":"geex8f8q"}
+{"time":"2026-03-05T13:05:07.853875+05:30","level":"INFO","msg":"sender: closed","stream_id":"geex8f8q"}
+{"time":"2026-03-05T13:05:07.853929+05:30","level":"INFO","msg":"stream: closed","id":"geex8f8q"}

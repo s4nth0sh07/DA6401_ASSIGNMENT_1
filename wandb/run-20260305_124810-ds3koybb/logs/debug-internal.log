@@ -1,0 +1,11 @@
+{"time":"2026-03-05T12:48:11.102013+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T12:48:11.51169+05:30","level":"INFO","msg":"stream: created new stream","id":"ds3koybb"}
+{"time":"2026-03-05T12:48:11.511923+05:30","level":"INFO","msg":"handler: started","stream_id":"ds3koybb"}
+{"time":"2026-03-05T12:48:11.512064+05:30","level":"INFO","msg":"stream: started","id":"ds3koybb"}
+{"time":"2026-03-05T12:48:11.512237+05:30","level":"INFO","msg":"sender: started","stream_id":"ds3koybb"}
+{"time":"2026-03-05T12:48:11.512248+05:30","level":"INFO","msg":"writer: started","stream_id":"ds3koybb"}
+{"time":"2026-03-05T12:48:16.316319+05:30","level":"INFO","msg":"stream: closing","id":"ds3koybb"}
+{"time":"2026-03-05T12:48:18.019411+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T12:48:18.550912+05:30","level":"INFO","msg":"handler: closed","stream_id":"ds3koybb"}
+{"time":"2026-03-05T12:48:18.552588+05:30","level":"INFO","msg":"sender: closed","stream_id":"ds3koybb"}
+{"time":"2026-03-05T12:48:18.552647+05:30","level":"INFO","msg":"stream: closed","id":"ds3koybb"}

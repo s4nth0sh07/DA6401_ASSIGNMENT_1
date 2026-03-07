@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:30:23.250048+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:30:23.645935+05:30","level":"INFO","msg":"stream: created new stream","id":"os98flfb"}
+{"time":"2026-03-05T15:30:23.646159+05:30","level":"INFO","msg":"handler: started","stream_id":"os98flfb"}
+{"time":"2026-03-05T15:30:23.646299+05:30","level":"INFO","msg":"stream: started","id":"os98flfb"}
+{"time":"2026-03-05T15:30:23.646478+05:30","level":"INFO","msg":"sender: started","stream_id":"os98flfb"}
+{"time":"2026-03-05T15:30:23.646489+05:30","level":"INFO","msg":"writer: started","stream_id":"os98flfb"}
+{"time":"2026-03-05T15:30:33.222203+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:30:34.156029+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:30:34.159677+05:30","level":"INFO","msg":"stream: closing","id":"os98flfb"}
+{"time":"2026-03-05T15:30:34.159854+05:30","level":"INFO","msg":"handler: closed","stream_id":"os98flfb"}
+{"time":"2026-03-05T15:30:34.160129+05:30","level":"INFO","msg":"sender: closed","stream_id":"os98flfb"}
+{"time":"2026-03-05T15:30:34.160139+05:30","level":"INFO","msg":"stream: closed","id":"os98flfb"}

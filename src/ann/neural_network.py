@@ -6,7 +6,7 @@ import numpy as np
 import wandb
 from .neural_layer import layer 
 from .objective_functions import cross_entropy_loss, cross_entropy_grad, mean_squared_grad, mean_squared_loss
-from .optimizers import SGD, Momentum, NAG, RMSprop, Adam, Nadam
+from .optimizers import SGD, Momentum, NAG, RMSprop
 
 class NeuralNetwork:
     """
@@ -22,32 +22,29 @@ class NeuralNetwork:
         """
         self.layers = {}
         hidden_layer_size = cli_args.hidden_size
+        if len(hidden_layer_size) == 1 and cli_args.num_layers > 1:
+            hidden_layer_size = hidden_layer_size * cli_args.num_layers
+
         self.learning_rate = cli_args.learning_rate
         self.loss = cli_args.loss
         self.model_save_path = cli_args.model_save_path
 
-        self.layers['hidden1'] = layer(
-            no_of_neurons = hidden_layer_size[0],
-            no_of_inputs = 784,
-            weight_init = cli_args.weight_init,
-            activation = cli_args.activation
-        )
+        all_dims = [784] + hidden_layer_size + [10]
 
-        for i in range(len(hidden_layer_size)):
-            input, output = hidden_layer_size[i], 0
-            if i == len(hidden_layer_size) - 1:
-                activation = 'softmax'
-                name = 'output_layer'
-                output = 10
-            else:
-                activation = cli_args.activation
-                name = f"hidden{i + 2}"
-                output =  hidden_layer_size[i + 1]
-
+        for i in range(len(all_dims) - 1):
+            in_dim = all_dims[i]
+            out_dim = all_dims[i+1]
             
+            if i < len(all_dims) - 2:
+                name = f"hidden{i+1}"
+                activation = cli_args.activation
+            else:
+                name = "output_layer"
+                activation = 'linear' 
+
             self.layers[name] = layer(
-                no_of_neurons = output, 
-                no_of_inputs = input,
+                no_of_neurons = out_dim, 
+                no_of_inputs = in_dim,
                 weight_init = cli_args.weight_init,
                 activation = activation
             )
@@ -63,10 +60,8 @@ class NeuralNetwork:
                 self.optimizer = NAG(self.layers, learning_rate = self.learning_rate, b = 0.9)
             case 'rmsprop':
                 self.optimizer = RMSprop(self.layers, learning_rate = self.learning_rate, b = 0.999, e = 1e-8)
-            case 'adam':
-                self.optimizer = Adam(self.layers, learning_rate = self.learning_rate, b1 = 0.9, b2 = 0.999, e = 1e-8)
-            case 'nadam':
-                self.optimizer = Nadam(self.layers, learning_rate = self.learning_rate, b1 = 0.9, b2 = 0.999, e = 1e-8)
+        
+        self.weight_decay = cli_args.weight_decay
 
     
     def forward(self, X):
@@ -100,14 +95,26 @@ class NeuralNetwork:
         elif self.loss == 'cross_entropy':
             error = cross_entropy_grad(y_true, y_pred)
         
+        grad_W_list = []
+        grad_b_list = []
+
         curr = {key : self.layers[key] for key in reversed(self.layers)}
         for layer_name, l in curr.items():
             error = l.backward_pass(error)
+            l.grad_W += (self.weight_decay * l.weights)
+            grad_W_list.append(l.grad_W)
+            grad_b_list.append(l.grad_b)
         
-        grads_W = {name : l.grad_W for name, l in self.layers.items()}
-        grads_b = {name : l.grad_b for name, l in self.layers.items()}
+        self.grad_W = np.empty(len(grad_W_list), dtype=object)
+        self.grad_b = np.empty(len(grad_b_list), dtype=object)
+        
+        for i, (gw, gb) in enumerate(zip(grad_W_list, grad_b_list)):
+            self.grad_W[i] = gw
+            self.grad_b[i] = gb
 
-        return grads_W, grads_b
+        # print("Shape of grad_Ws:", self.grad_W.shape, self.grad_W[1].shape)
+        # print("Shape of grad_bs:", self.grad_b.shape, self.grad_b[1].shape)
+        return self.grad_W, self.grad_b
     
     def update_weights(self):
         """
@@ -115,7 +122,7 @@ class NeuralNetwork:
         """
         self.optimizer.update()
     
-    def train(self, X_train, y_train, epochs, batch_size, X_val = None, y_val = None):
+    def train(self, X_train, y_train, epochs = 1, batch_size = 32):
         """
         Train the network for specified epochs.
         """
@@ -139,28 +146,34 @@ class NeuralNetwork:
                 b += batch_size
             
             curr_train_pred = self.forward(X_train)
-            curr_train_loss = None
-            curr_val_pred = self.forward(X_val)
-            curr_val_loss = None
             if self.loss == 'mean_squared_error':
                 curr_train_loss = mean_squared_loss(y_train, curr_train_pred)
-                curr_val_loss = mean_squared_loss(y_val, curr_val_pred)
             elif self.loss == 'cross_entropy':
                 curr_train_loss = cross_entropy_loss(y_train, curr_train_pred)
-                curr_val_loss = cross_entropy_loss(y_val, curr_val_pred)
 
-            accuracy = ((self.evaluate(X_val, y_val), self.evaluate(X_train, y_train)))
-
+            train_acc = self.evaluate(X_train, y_train)
+            
             log_dict = {
                 "epoch": curr_epoch,
                 "train_loss": curr_train_loss,
-                "train_accuracy": accuracy[1],
-                "val_loss": curr_val_loss,
-                "val_accuracy": accuracy[0]
+                "train_accuracy": train_acc
             }
-            print_str = f"Epoch {curr_epoch} | Train Loss: {curr_train_loss:.4f} | Train Acc: {accuracy[1]*100:.2f}%"
-            print(print_str)
-            print_str = f"Epoch {curr_epoch} | Validation Loss: {curr_val_loss:.4f} | Validation Acc: {accuracy[0]*100:.2f}%"
+            
+            print_str = f"Epoch {curr_epoch} | Train Loss: {curr_train_loss:.4f} | Train Acc: {train_acc*100:.2f}%"
+
+            if hasattr(self, 'X_val') and hasattr(self, 'y_val'):
+                curr_val_pred = self.forward(self.X_val)
+                if self.loss == 'mean_squared_error':
+                    curr_val_loss = mean_squared_loss(self.y_val, curr_val_pred)
+                elif self.loss == 'cross_entropy':
+                    curr_val_loss = cross_entropy_loss(self.y_val, curr_val_pred)
+                    
+                val_acc = self.evaluate(self.X_val, self.y_val)
+                
+                log_dict["val_loss"] = curr_val_loss
+                log_dict["val_accuracy"] = val_acc
+                
+                print_str += f" | Val Loss: {curr_val_loss:.4f} | Val Acc: {val_acc*100:.2f}%"
             print(print_str)
 
             if wandb.run is not None:
@@ -188,3 +201,19 @@ class NeuralNetwork:
         res = np.sum(expected_op ==  actual_op)
         
         return res / expected_op.shape[0]
+    
+    def get_weights(self):
+        d = {}
+        for i, (name, layer) in enumerate(self.layers.items()):
+            d[f"W{i}"] = layer.weights.copy()
+            d[f"b{i}"] = layer.biases.copy()
+        return d
+
+    def set_weights(self, weight_dict):
+        for i, (name, layer) in enumerate(self.layers.items()):
+            w_key = f"W{i}"
+            b_key = f"b{i}"
+            if w_key in weight_dict:
+                layer.weights = weight_dict[w_key].copy()
+            if b_key in weight_dict:
+                layer.biases = weight_dict[b_key].copy()

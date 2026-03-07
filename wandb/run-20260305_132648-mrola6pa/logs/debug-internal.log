@@ -1,0 +1,12 @@
+{"time":"2026-03-05T13:26:48.499232+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T13:26:48.892732+05:30","level":"INFO","msg":"stream: created new stream","id":"mrola6pa"}
+{"time":"2026-03-05T13:26:48.892838+05:30","level":"INFO","msg":"handler: started","stream_id":"mrola6pa"}
+{"time":"2026-03-05T13:26:48.893137+05:30","level":"INFO","msg":"stream: started","id":"mrola6pa"}
+{"time":"2026-03-05T13:26:48.893144+05:30","level":"INFO","msg":"writer: started","stream_id":"mrola6pa"}
+{"time":"2026-03-05T13:26:48.893148+05:30","level":"INFO","msg":"sender: started","stream_id":"mrola6pa"}
+{"time":"2026-03-05T13:26:57.71784+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T13:26:58.323809+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T13:26:58.331393+05:30","level":"INFO","msg":"stream: closing","id":"mrola6pa"}
+{"time":"2026-03-05T13:26:58.331468+05:30","level":"INFO","msg":"handler: closed","stream_id":"mrola6pa"}
+{"time":"2026-03-05T13:26:58.332107+05:30","level":"INFO","msg":"sender: closed","stream_id":"mrola6pa"}
+{"time":"2026-03-05T13:26:58.33216+05:30","level":"INFO","msg":"stream: closed","id":"mrola6pa"}

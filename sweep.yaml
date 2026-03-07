@@ -1,0 +1,42 @@
+program: src/train.py
+method: bayes
+metric:
+  name: val_accuracy
+  goal: maximize
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+parameters:
+  dataset:
+    values: ["mnist", "fashion_mnist"]
+  epochs:
+    values: [5, 10]
+  batch_size:
+    values: [32, 64, 128]
+  learning_rate:
+    distribution: log_uniform_values
+    min: 0.0001
+    max: 0.1
+  optimizer:
+    values: ["sgd", "momentum", "nag", "rmsprop"]
+  activation:
+    values: ["relu", "sigmoid", "tanh"]
+  weight_init:
+    values: ["random", "xavier"]
+  loss:
+    values: ["mean_squared_error", "cross_entropy"]
+  num_layers:
+    values: [1, 2, 3]
+  hidden_size:
+    values: 
+      - "64"
+      - "128"
+      - "128 64"
+      - "64 64"
+      - "128 64 32"
+  weight_decay:
+    values: [0.0, 0.0005, 0.005]
+  wandb_project:
+    value: "ASSIGNMENT-1"

@@ -1,0 +1,12 @@
+{"time":"2026-03-05T16:04:32.356714+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T16:04:32.779012+05:30","level":"INFO","msg":"stream: created new stream","id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:32.779075+05:30","level":"INFO","msg":"handler: started","stream_id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:32.779438+05:30","level":"INFO","msg":"stream: started","id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:32.779457+05:30","level":"INFO","msg":"writer: started","stream_id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:32.779463+05:30","level":"INFO","msg":"sender: started","stream_id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:43.708148+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T16:04:44.084042+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T16:04:44.086853+05:30","level":"INFO","msg":"stream: closing","id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:44.086868+05:30","level":"INFO","msg":"handler: closed","stream_id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:44.087164+05:30","level":"INFO","msg":"sender: closed","stream_id":"g4rl2pph"}
+{"time":"2026-03-05T16:04:44.087174+05:30","level":"INFO","msg":"stream: closed","id":"g4rl2pph"}

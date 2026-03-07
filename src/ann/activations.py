@@ -39,6 +39,12 @@ def softmax(x):
 
     return temp / summer
 
+def linear(x):
+    return x
+
+def linear_grad(x):
+    return np.ones_like(x)
+
 def forward_activate(activation):
     match activation.lower():
         case 'relu':
@@ -49,6 +55,8 @@ def forward_activate(activation):
             return tanh
         case 'softmax':
             return softmax
+        case 'linear':
+            return linear
 
 def backward_activate(activation):
     match activation.lower():
@@ -58,4 +66,6 @@ def backward_activate(activation):
             return sigmoid_grad
         case 'tanh':
             return tanh_grad
+        case 'linear': 
+            return linear_grad
         

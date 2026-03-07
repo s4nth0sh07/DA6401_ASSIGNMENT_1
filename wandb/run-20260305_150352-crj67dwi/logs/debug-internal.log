@@ -1,0 +1,12 @@
+{"time":"2026-03-05T15:03:52.662626+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-03-05T15:03:53.058016+05:30","level":"INFO","msg":"stream: created new stream","id":"crj67dwi"}
+{"time":"2026-03-05T15:03:53.05808+05:30","level":"INFO","msg":"handler: started","stream_id":"crj67dwi"}
+{"time":"2026-03-05T15:03:53.05826+05:30","level":"INFO","msg":"stream: started","id":"crj67dwi"}
+{"time":"2026-03-05T15:03:53.05827+05:30","level":"INFO","msg":"sender: started","stream_id":"crj67dwi"}
+{"time":"2026-03-05T15:03:53.058282+05:30","level":"INFO","msg":"writer: started","stream_id":"crj67dwi"}
+{"time":"2026-03-05T15:04:15.19928+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-05T15:04:16.183331+05:30","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-05T15:04:16.191969+05:30","level":"INFO","msg":"stream: closing","id":"crj67dwi"}
+{"time":"2026-03-05T15:04:16.192191+05:30","level":"INFO","msg":"handler: closed","stream_id":"crj67dwi"}
+{"time":"2026-03-05T15:04:16.19331+05:30","level":"INFO","msg":"sender: closed","stream_id":"crj67dwi"}
+{"time":"2026-03-05T15:04:16.19339+05:30","level":"INFO","msg":"stream: closed","id":"crj67dwi"}
